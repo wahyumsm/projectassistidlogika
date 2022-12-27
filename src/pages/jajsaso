@@ -1,0 +1,355 @@
+// <!-- import React from "react";
+// import "@fontsource/roboto/300.css";
+// import "@fontsource/roboto/400.css";
+// import "@fontsource/roboto/500.css";
+// import "@fontsource/roboto/700.css";
+// import Box from "@mui/material/Box";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
+// import Modal from "@mui/material/Modal";
+// import { Stack, TextField } from "@mui/material";
+// import InputLabel from "@mui/material/InputLabel";
+// import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
+// import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import dayjs from "dayjs";
+
+// import { TimePicker } from "@mui/x-date-pickers/TimePicker";
+
+// const jadwalDokter = [
+// {
+// nama: "DR.ucok sitohang",
+// senin: [
+// { mulai: 1000, selesai: 1100 },
+// { mulai: 1400, selesai: 1600 },
+// ],
+// selasa: [{ mulai: 800, selesai: 1100 }],
+// rabu: [{ mulai: 70, selesai: 1100 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 700, selesai: 2200 }],
+// sabtu: [{ mulai: 700, selesai: 2200 }],
+// minggu: [{ mulai: 700, selesai: 2200 }],
+// },
+// {
+// nama: "DR.budi anduk",
+// senin: [
+// { mulai: 300, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [{ mulai: 900, selesai: 2200 }],
+// rabu: [{ mulai: 900, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [{ mulai: 900, selesai: 2200 }],
+// },
+// {
+// nama: "DR.wahyu hidayat",
+// senin: [
+// { mulai: 100, selesai: 600 },
+// {
+// senin: [
+// { mulai: 100, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 100, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// {
+// nama: "DR.Siregar ",
+// senin: [
+// { mulai: 100, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// {
+// nama: "DR.Sitompul",
+// senin: [
+// { mulai: 100, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// {
+// nama: "DR.Gigi",
+// senin: [
+// { mulai: 100, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// {
+// nama: "DR.Arif",
+// senin: [
+// { mulai: 100, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// {
+// nama: "DR.Herman",
+// senin: [
+// { mulai: 100, selesai: 600 },
+// { mulai: 1800, selesai: 2300 },
+// ],
+// selasa: [],
+// rabu: [{ mulai: 100, selesai: 2200 }],
+// kamis: [
+// { mulai: 900, selesai: 1200 },
+// { mulai: 1500, selesai: 2100 },
+// ],
+// jumat: [{ mulai: 900, selesai: 2200 }],
+// sabtu: [{ mulai: 900, selesai: 2200 }],
+// minggu: [],
+// },
+// ];
+// const App = () => {
+// const [open, setOpen] = React.useState(false);
+// const handleOpen = () => setOpen(true);
+// const [batasKunjungan, setBatasKunjungan] = React.useState(0);
+// const [jamKunjungan, setJamKunjungan] = React.useState(new Date());
+
+// const handleClose = () => setOpen(false);
+// const [namaDokter, setNamaDokter] = React.useState("");
+// const [selectJadwalPraktekDokter, setSelectJadwalPraktekDokter] =
+// React.useState([]);
+// const [listJadwal, setListJadwal] = React.useState([]);
+
+// const [tanggal, setTanggal] = React.useState(new Date());
+
+// const handleChange = (event) => {
+// setNamaDokter(event.target.value);
+
+// const day = new Date(tanggal).getDay();
+// const hari = [
+// "senin",
+// "selasa",
+// "rabu",
+// "kamis",
+// "jumat",
+// "sabtu",
+// "minggu",
+// ];
+// const today = hari[day - 1];
+// const jadwal = jadwalDokter.find((v) => v.nama === event.target.value);
+// console.log(jadwal);
+// const jadwalSesuaiHari = jadwal[today];
+
+// setListJadwal(jadwalSesuaiHari);
+
+// console.log(jadwalSesuaiHari);
+// };
+// const handleChangeJadwal = (event) => {
+// setSelectJadwalPraktekDokter(event.target.value);
+// };
+// const style = {
+// position: "absolute",
+// top: "50%",
+// left: "50%",
+// transform: "translate(-50%, -50%)",
+// width: 670,
+// bgcolor: "background.paper",
+// border: "2px solid #000",
+// boxShadow: 24,
+// p: 10,
+// height: 500,
+// };
+// const hiasan = {
+// position: "absolute",
+// top: "50%",
+// left: "50%",
+// transform: "translate(-50%, -50%)",
+// width: 220,
+// bgcolor: "background.paper",
+// border: "2px solid #000",
+// boxShadow: 24,
+// p: 10,
+// height: 150,
+// };
+
+// const [value, setValue] = React.useState(dayjs("2014-08-18T21:11:54"));
+
+// const handleBuka = () => {
+// console.log(selectJadwalPraktekDokter);
+// // console.log(jamKunjungan);
+// console.log(batasKunjungan);
+
+// const newJamKunjungan = jamKunjungan.$H + ":" + jamKunjungan.$m;
+// console.log(newJamKunjungan);
+// setBuka(true);
+// };
+
+// const handleTutup = () => setBuka(false);
+
+// const [buka, setBuka] = React.useState(false);
+// const handleJam = (newValue) => {
+// setTanggal(newValue);
+// };
+// const handleSimpan = () => {
+// console.log(selectJadwalPraktekDokter);
+
+// if (jamKunjungan >= jamMulai && jamKunjungan <= jamSelesai) { console.log("Jam kunjung Tersedia,Silahkan Berkunjung kau
+//     anjing"); } else { console.log("bahwa tidak ada jam berkunjung anjing"); } }; return ( <>
+//     <div>
+//         <Button onClick={handleOpen}>Pilihan Rumah Sakit</Button>
+//         <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title"
+//             aria-describedby="modal-modal-description">
+//             <Box sx={style}>
+//                 <Typography id="modal-modal-title" variant="h1" component="h5"></Typography>
+//                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+//                     <h3 style={{ marginLeft: 90 }}>
+//                         Silahkan Pilih jadwal dokter dan ketemu dengan dokter
+//                     </h3>
+//                 </Typography>
+//                 <div style={{ marginLeft: 330, marginTop: 1, position: "absolute" }}>
+//                     <LocalizationProvider dateAdapter={AdapterDayjs}>
+//                         <TimePicker label="Jam Kunjungan Pasien" value={jamKunjungan} ampm={false} onChange={(value)=> {
+//                             // console.log(value.$H, value.$m);
+//                             setJamKunjungan(value);
+//                             }}
+//                             renderInput={(params) =>
+//                             <TextField {...params} />}
+//                             />
+//                     </LocalizationProvider>
+//                 </div>
+//                 <div>
+//                     {/* INI ADALAH PILIHAN TANGGAL */}
+//                     <Stack style={{ width: 300 }} spacing={3}>
+//                         <LocalizationProvider dateAdapter={AdapterDayjs}>
+//                             <MobileDatePicker label="Date mobile" inputFormat="MM/DD/YYYY" value={tanggal}
+//                                 onChange={handleJam} renderInput={(params)=>
+//                                 <TextField {...params} />}
+//                                 />
+//                         </LocalizationProvider>
+//                     </Stack>
+//                 </div>
+//                 {/* PILIHAN NAMA
+//                 DOKTER DAN INI TEXT FIELD ATAU PILIHAN */}
+//                 <FormControl style={{ width: 300, marginTop: 20, marginRight: 100, border: "2px solid blue" , }}>
+//                     <InputLabel id="demo-simple-select-label">
+//                         Dropdown Nama Dokter
+//                     </InputLabel>
+//                     <Select labelId="demo-simple-select-label" id="demo-simple-select" value={namaDokter}
+//                         label="Jadwal Nama Dokter" onChange={handleChange}>
+//                         {jadwalDokter.map((v) => {
+//                         return
+//                         <MenuItem value={v.nama}>{v.nama}</MenuItem>;
+//                         })}
+//                     </Select>
+//                 </FormControl>
+
+//                 {/* dropdown jadwal prakter dokter */}
+//                 <FormControl style={{ width: 300, marginTop: 30, marginRight: 100, border: "2px solid blue" , }}>
+//                     <InputLabel id="demo-simple-select-label">
+//                         Dropdown Jadwal praktek Dokter
+//                     </InputLabel>
+
+//                     <Select labelId="demo-simple-select-label" id="demo-simple-select" label="JadwalPraktekDokter"
+//                         value={selectJadwalPraktekDokter} onChange={handleChangeJadwal}>
+//                         {listJadwal.map((v) => {
+//                         return (
+//                         <MenuItem value={`${v.mulai}-${v.selesai}`}>
+//                         {v.mulai}-{v.selesai} WIB
+//                         </MenuItem>
+//                         );
+//                         })}
+//                     </Select>
+//                 </FormControl>
+
+//                 {/* INI INPUT MANUAL PADA DURASI KUNJUNGAN PASIEN */}
+//                 <TextField style={{ width: 300, marginTop: 20, border: "2px solid blue" , }}
+//                     id="outlined-multiline-flexible" label="Batas Kunjungan Pasien" type={"number"}
+//                     value={batasKunjungan} onChange={(e)=> setBatasKunjungan(e.target.value)}
+//                     />
+
+//                     {/* TOMBOL MENYIMPAN DATA */}
+
+//                     <Button style={{ backgroundColor: "blue" , width: 100, marginLeft: 160, color: "white" , marginTop:
+//                         10, }} onClick={handleSimpan}>
+//                         Simpan
+//                     </Button>
+//                     {/* <Modal open={buka} aria-labelledby="modal-modal-title"
+//                         aria-describedby="modal-modal-description">
+//                         <Box sx={hiasan}>
+//                             <Typography style={{ marginLeft: 30, fontSize: 20 }} id="modal-modal-title" variant="h7"
+//                                 component="h5">
+//                                 Tidak Ada Jam Kunjungan
+//                             </Typography>
+//                             <h6 style={{ color: "red" , fontWeight: "bold" , fontSize: 14, marginLeft: 20, }}
+//                                 id="modal-modal-title" component="h2">
+//                                 Silahkan Menunggu Apabila Jam Kunjung telah ada!!!
+//                             </h6>
+//                             <Button open={buka} style={{ backgroundColor: "orange" , width: 100, marginLeft: 60,
+//                                 color: "white" , marginTop: 10, }} onClick={handleTutup}>
+//                                 Keluar
+//                             </Button>
+//                         </Box>
+//                     </Modal> */}
+//             </Box>
+//         </Modal>
+//     </div>
+//     </>
+//     );
+//     };
+
+//     export default App; -->
